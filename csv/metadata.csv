@@ -1,0 +1,5 @@
+atomId,question,goal,modality
+hasUnsubscribeFunction,Can a user easily unsubscribe?,,
+isConsentAcquired,Has the user provided consent either express or inferred?,,
+isIdentityClear,Is it clear who is sending the email?,,
+sendCommercialElectronicMessage,,canSend,PERMITTED

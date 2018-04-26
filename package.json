@@ -1,0 +1,34 @@
+{
+  "name": "fwo-backend",
+  "version": "1.0.0",
+  "description": "Backend that exposes the RaaP platform to the FWO app",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape 'src/**/*.spec.js'",
+    "start": "node src/server.js",
+    "debug": "NODE_DEBUG=request node src/server.js",
+    "inspect": "node --inspect src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/data61/raap-example-middleware.git"
+  },
+  "author": "Data61",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "csvtojson": "^1.1.9",
+    "express": "^4.16.2",
+    "helmet": "^3.12.0",
+    "lodash": "^4.17.4",
+    "make-runnable": "^1.3.6",
+    "mongodb": "^2.2.33",
+    "opn": "^5.3.0",
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5"
+  },
+  "devDependencies": {
+    "tape": "^4.9.0"
+  }
+}
