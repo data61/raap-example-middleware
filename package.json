@@ -1,7 +1,6 @@
 {
-  "name": "fwo-backend",
+  "name": "raap-example-middleware",
   "version": "1.0.0",
-  "description": "Backend that exposes the RaaP platform to the FWO app",
   "main": "index.js",
   "scripts": {
     "test": "tape 'src/**/*.spec.js'",
@@ -14,7 +13,7 @@
     "url": "https://github.com/data61/raap-example-middleware.git"
   },
   "author": "Data61",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",

@@ -133,5 +133,8 @@ Sample response:
     }
 }
 ```
+---
+The Software is copyright (c) 2017 Commonwealth Scientific and Industrial Research Organisation (CSIRO) ABN 41 687 119 230. All rights reserved.
 
+CSIRO grants you a licence to access the RaaP Sample Application on the terms of the MIT License published by the [Open Source Initiative](https://opensource.org/licenses/MIT) and included in this repository. Nothing in the MIT Licence derogates from any applicable Australian Consumer Laws that cannot be excluded.
 
