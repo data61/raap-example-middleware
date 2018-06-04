@@ -10,7 +10,6 @@ const CONFIG = require('../config');
 const utils = require('./utils');
 
 const CSV_PATH = './csv/metadata.csv';
-const LOGIN_PATH = '/api/v1/user/token';
 const SCHEMA_PATH = `/api/v1/domain/${CONFIG.DOMAIN}/schema`;
 const INPUT_ATOMS_PATH = `/api/v1/domain/${CONFIG.DOMAIN}/reasoning/input-atoms?criteria=draft`;
 const REASON_PATH = `/api/v1/domain/${CONFIG.DOMAIN}/reasoning/reason?criteria=draft`;
@@ -27,7 +26,7 @@ async function startServer() {
   app.use(bodyParser.json());
   app.use(express.static('public'));
 
-  const token = await fetchToken();
+  const token = CONFIG.EXAMPLE_APP_TOKEN;
   const [schema, atomMetadata] = await Promise.all([fetchSchema(token), loadCSVMetadata()]);
 
   const atomLibrary = utils.mergeSchemaWithMetadata(schema, atomMetadata);
@@ -90,16 +89,6 @@ async function startServer() {
   app.listen(3000, () => {
     console.log('Example middleware listening on port 3000!');
   });
-}
-
-async function fetchToken() {
-  return request.post(`${CONFIG.RAAP_URL}${LOGIN_PATH}`, {
-    json: true,
-    auth: {
-      user: CONFIG.RAAP_USERNAME,
-      pass: CONFIG.RAAP_PASSWORD
-    }
-  }).then(tokenResponse => Promise.resolve(utils.extractAccessToken(tokenResponse)));
 }
 
 async function fetchSchema(token) {
